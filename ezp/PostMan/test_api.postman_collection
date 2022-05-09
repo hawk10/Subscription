@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "8132be67-064e-41ba-8c2e-31466c8922c3",
+		"name": "Ezpay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Monthly_Success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commonCreateSubscriptionDto\": {\r\n    \"amount\": 10,\r\n     \"subscriptionDay\":\"11\",\r\n    \"subType\": \"MONTHLY\"\r\n    },\r\n    \"startDate\":\"11/05/2022\",\r\n    \"endDate\":\"11/07/2022\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/createSubscription",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"createSubscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Daily_Success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commonCreateSubscriptionDto\": {\r\n    \"amount\": 10,\r\n     \"subscriptionDay\":\"11\",\r\n    \"subType\": \"DAILY\"\r\n    },\r\n    \"startDate\":\"11/06/2022\",\r\n    \"endDate\":\"11/07/2022\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/createSubscription",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"createSubscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weekly_Success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commonCreateSubscriptionDto\": {\r\n    \"amount\": 10,\r\n     \"subscriptionDay\":\"Wednesday\",\r\n    \"subType\": \"WEEKLY\"\r\n    },\r\n    \"startDate\":\"11/05/2022\",\r\n    \"endDate\":\"11/07/2022\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/createSubscription",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"createSubscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StartDateAfterEndDate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commonCreateSubscriptionDto\": {\r\n    \"amount\": 10,\r\n     \"subscriptionDay\":\"Wednesday\",\r\n    \"subType\": \"WEEKLY\"\r\n    },\r\n    \"startDate\":\"11/09/2022\",\r\n    \"endDate\":\"11/07/2022\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/createSubscription",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"createSubscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DateDurationMoreThan3Months",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commonCreateSubscriptionDto\": {\r\n    \"amount\": 10,\r\n     \"subscriptionDay\":\"Wednesday\",\r\n    \"subType\": \"WEEKLY\"\r\n    },\r\n    \"startDate\":\"11/07/2022\",\r\n    \"endDate\":\"11/12/2022\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/createSubscription",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"createSubscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IncorrectSubscriptionType",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commonCreateSubscriptionDto\": {\r\n    \"amount\": 10,\r\n     \"subscriptionDay\":\"Wednesday\",\r\n    \"subType\": \"Annual\"\r\n    },\r\n    \"startDate\":\"11/07/2022\",\r\n    \"endDate\":\"11/12/2022\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/createSubscription",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"createSubscription"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -29,12 +29,15 @@ public class CreateSubscriptionAggregateFacadeImpl implements CreateSubscription
         * */
         checkBusinessRules(subscription);
 
+        /*
+        will generate the invoices and return data
+        * */
         return generateInvoiceDates(subscription);
     }
 
     private SubscriptionAggregate generateInvoiceDates(SubscriptionAggregate subscription) throws ParseException {
 
-        /*at this point need to check for Subscription Type and based on that i'll route the logic*/
+        /*at this point need to check for Subscription Type and based on that it'll route the logic based on sub type*/
         return SubTypeFactory.SUB_TYPE_IMPL_MAP.get(subscription.getCommonCreateSubscriptionDto().
                 getSubType()).executeLogic(subscription);
 

@@ -46,14 +46,23 @@ public class CreateSubscriptionController extends AbstractBaseController {
             CreateSubscriptionRequestDto dto = gson.fromJson(body, CreateSubscriptionRequestDto.class);
 
             /*
-            checks if the mandatory request data is available
+            * checks if the mandatory request data is available
+            * using reflection...normally would be wary of perf issues
+            * poc of doing missing data validation
             * */
             response =
                     doCommonValidation(dto, response, CreateSubscriptionRequestDto.class);
 
+            /* above validation fails
+            * response code will no longer be success
+            * */
             Assert.isTrue(ResponseCode.SUCCESS.equals(response.getResponseCode()), "Validation Failed");
 
+            /*change to domain object*/
             BaseDomain baseDomain = convert2Aggregate(dto);
+
+            /*
+            * all core logic wrapped in one service call*/
             SubscriptionAggregate subscription = createSubscriptionAggregateFacade.createSubscription(baseDomain);
 
             return convert2Response(response, subscription);

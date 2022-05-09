@@ -18,6 +18,13 @@ public class MonthlySubTypeImpl implements SubType {
         return Constants.MONTHLY;
     }
 
+    /**
+     * if day of month matches the day from user
+     * creates the invoice date
+     * @param subscription
+     * @return
+     * @throws ParseException
+     */
     @Override
     public SubscriptionAggregate executeLogic(SubscriptionAggregate subscription) throws ParseException {
         long between =

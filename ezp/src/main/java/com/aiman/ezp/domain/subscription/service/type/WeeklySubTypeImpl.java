@@ -5,7 +5,6 @@ import com.aiman.ezp.domain.subscription.SubscriptionAggregate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.sql.Date;
 import java.text.ParseException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -21,6 +20,13 @@ public class WeeklySubTypeImpl implements SubType {
         return Constants.WEEKLY;
     }
 
+    /**
+     * if day matches then create invoice
+     * should have validation or handling to check Day Data correctness
+     * @param subscription
+     * @return
+     * @throws ParseException
+     */
     @Override
     public SubscriptionAggregate executeLogic(SubscriptionAggregate subscription) throws ParseException {
         long between =

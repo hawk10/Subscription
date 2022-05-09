@@ -18,6 +18,13 @@ public class DailySubTypeImpl implements SubType {
         return Constants.DAILY;
     }
 
+    /**
+     * since daily get the total days between executions
+     * increment date based on that
+     * @param subscription
+     * @return
+     * @throws ParseException
+     */
     @Override
     public SubscriptionAggregate executeLogic(SubscriptionAggregate subscription) throws ParseException {
 
